@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+        font-family: 'IAmAPlayer';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+        font-weight: normal;
+        font-display: swap;
+
+        
+}
+
+        .bg-title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 190px;
+                font-weight: 1000;
+                color: rgba(255, 255, 255, 0.37);
+                z-index: 1;
+                font-family: 'IAmAPlayer';
+            }
+
+        .calculator{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+            z-index: 10;
+          }
+
+        .mainBox{
+            background-color: rgb(235, 238, 241);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        #dis {
+            width: 330px;
+            height: 100px;
+            background-color: #9a9b8a;
+            border: 5px solid #b8b7bd;
+            border-radius: 5px;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 15px;
+            box-shadow: rgba(0, 0, 0, 0.08) 2px 3px 1px 1px inset;
+            margin-bottom: 15px;
+        }
+
+        /* 버튼 */
+        .outBox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px; 
+            width: 350px;
+            font-size: 20px;
+            font-family: 'IAmAPlayer';
+            
+        }
+
+        .outBox .box {
+            width: 70px;
+            height: 70px;
+            background-color: rgb(214, 214, 214);
+            border: 1px solid rgb(212, 212, 212);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            box-shadow: rgba(0, 0, 0, 0.15) 1px 1px 1px 1px;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .outBox .box:hover{
+           background-color: #a7a6a6; 
+        }
+
+        /* 클리어 */
+        .outBox #box1 {
+            background-color: rgb(212, 206, 206);
+            border: 1px solid rgb(193, 199, 204);
+            font-size: 19px;
+        }
+
+        #box1:hover{
+           background-color: #ee6262; 
+           color: cornsilk;
+           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px 1px;
+        }
+
+        /* 뒤로가기 */
+        .outBox #box2 {
+            background-color: rgb(184, 176, 177);
+            border: 1px solid rgb(177, 177, 177);
+            font-size: 14px;
+        }
+
+        #box2:hover{
+           background-color: #ac9595; 
+           color: cornsilk;
+           font-size: 30px;
+           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px 1px;
+        }
+
+
+        /* 연산자 */
+        .outBox .operator{
+            background-color: rgb(224, 212, 216);
+            border: 1px solid rgb(216, 204, 207);
+            font-size: 20px;
+        }
+
+         .outBox .operator:hover {
+           background-color: #a56868; 
+           color: cornsilk;
+           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px 1px;
+        }
+        
+        /* = */
+        .outBox #box4 {
+            background-color: rgb(129, 131, 131);
+            border: 1px solid rgb(183, 193, 204);
+            font-size: 25px;
+            color: aliceblue;
+        }
+
+        #box4:hover{
+           background-color: #333232; 
+           color: cornsilk;
+           font-size: 30px;
+           box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 1px 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+            <div class="bg-title">CALCULATOR</div>
+        <div class="mainBox">
+     <div id="dis">0</div>
+     <div class="outBox">
+        <div class="box" data-num="1">1</div>
+        <div class="box" data-num="2">2</div>
+        <div class="box" data-num="3">3</div>
+       <div class="box operator" data-num="+">+</div>
+        
+        <div class="box" data-num="4">4</div>
+        <div class="box" data-num="5">5</div>
+        <div class="box" data-num="6">6</div>
+        <div class="box operator" data-num="-">-</div>
+        
+        <div class="box" data-num="7">7</div>
+        <div class="box" data-num="8">8</div>
+        <div class="box" data-num="9">9</div>
+        <div class="box operator" data-num="*">x</div>
+        
+        <div class="box" id="box1" data-num="clear">C</div>
+        <div class="box" data-num="0">0</div>
+        <div class="box" id="box2" data-num="back">←</div>
+        <div class="box operator" data-num="/">/</div>
+        
+        <div class="box" id="box4" data-num="=" style="width: 300px; border-radius: 10px;">=</div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        const boxs = document.querySelectorAll(".box")
+        const dis = document.querySelector("#dis")
+        let expr = ''
+
+        boxs.forEach((item)=>{
+            item.addEventListener("click", ()=>{
+                let v = item.dataset.num;
+
+                if(v === "clear"){
+                    expr = ''
+                    dis.innerHTML = '0'
+                    return;
+                }
+                
+                if(v === "back"){
+                    expr = expr.slice(0, -1);
+                    dis.innerHTML = expr === '' ? '0' : expr
+                    return;
+                }
+
+                if (v === "=") {
+                     }if (v === "=") {
+                    if (expr === '' || expr.endsWith("+")) {
+                        dis.innerHTML = 'error'
+                        expr = ''
+
+                    } else {
+                        let ans = eval(expr)
+                        dis.innerHTML = Number(ans).toLocaleString();
+                        expr = String(ans)
+                    }
+                    return;
+                }
+       
+                expr += v
+                dis.innerHTML = expr;
+            })
+        })
+    </script>
+</body>
+</html>
