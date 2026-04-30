@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        *{margin: 0; padding: 0;}
+
+        table{
+             width: 900px;
+             border-collapse: collapse;
+             margin: 20px auto;
+            
+        }
+
+        tr,td{
+           border: 1px solid rgb(221, 221, 221);
+           padding: 12px;
+           text-align: center;
+           font-size: 14px;
+           font-weight: 500;
+        }
+
+        th{
+            padding: 10px;
+            border: 1px solid rgb(221, 221, 221);
+            text-align: center;
+            background-color: rgb(252, 125, 116);
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+        }
+
+        .red{
+          color: rgb(196, 73, 73);
+          font-weight: 800;
+        }
+
+        </style>
+
+</head>
+<body>
+    <table>
+
+    <tr>
+    <th class="title" colspan="2">구분</th>
+        <th>대상</th>
+        <th>할인율</th>
+        <th>비고</th>
+    </tr>
+
+
+    <tr>
+         <td colspan="2">조기신청할인</td>
+         <td>2026년 8월 7일(금) 이전 신청자</td>
+         <td class="red">20%</td>
+         <td class="red" rowspan="3">최대할인율 30%</td>
+    </tr>
+
+    <tr>
+    <td rowspan="2">추가할인</td>
+    <td>학생</td>
+    <td>학생(※재학/휴학증명서 제출 필수)</td>
+    <td class="red">10%</td>
+  </tr>
+
+  <tr>
+    <td>기참가</td>
+    <td>1회 이상 참가자</td>
+    <td class="red">5%</td>
+  </tr>
+
+    </table>
+</body>
+</html>

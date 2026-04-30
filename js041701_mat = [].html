@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let kor = [85, 70, 60, 25, 35, 90,0]
+        // 이 개념을 '배열'이라고 한다
+        // 자바스크립트는 무조건 초기값(시작값)을 0으로 여긴다
+
+        let sum = 0
+        let mat = []
+        // 만약 mat를 배열로 사용할 거면 무조건 []으로 공백선언을 해줘야한다
+
+
+        // for문의 중간, '조건식'은 참이냐 거짓이냐를 계산한다
+        
+        for(let i=0; i<kor.length; i++){
+        // 문제는 컴퓨터가 데이터에 접근하는 방식인 '인덱스'가 0부터 시작하기 때문
+        // 그래서 마지막 인덱스 번호는 항상 전체 개수(length) - 1 이 된다
+
+        document.write("우리반 국어점수 ", i+1, "번 : ", kor[i], "<br/>")
+        sum = sum + kor[i]
+    }
+
+    document.write("국어점수 총합계 : ", sum, "<br/>")
+    document.write("국어점수 평균 : ", sum/kor.length, "<br/>")
+    </script>
+</body>
+</html>

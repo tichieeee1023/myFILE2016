@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style>
+
+        .calculator{
+            width: 380px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: rgba(58, 56, 56, 0.75);
+            border: 1px solid rgba( 255, 255, 255, 0.18 );
+            border-radius: 1px;
+
+        }
+
+        #dis {
+            width: 100%;
+            height: 80px;
+            background: rgba(255, 253, 253, 0.9);
+            border-radius: 8px;
+            font-size: 40px;
+            text-align: right;
+            line-height: 80px;
+            padding: 0 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .btnBox {
+            display: grid;
+            grid-template-columns:
+            gap: 10px;
+        }
+
+        .btn {
+            height: 60px;
+            border-radius: 8px;
+            border: none;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #d6dbe0;
+        }
+        /* 기능 버튼 */
+        .oprBox{
+            text-align: center;
+            height: 50px;
+            margin: 10px;
+            border-radius: 10px;
+            background-color: #e2a6a6;
+}
+
+        .keyBox #box1{
+            background-color: #f09393;
+            border: 1px solid #e99d9d;
+        }
+
+        .keyBox #box2{
+            background-color: #bdb2b2;
+            border: 1px solid #acabab;
+        }
+
+    
+    </style>
+</head>
+<body>
+
+  <div class="calculator">  
+    <div id="dis">0</div>
+
+    <!-- 계산기 버튼들 -->
+     <div class="btn">
+        <div class="oprBox" data-num="clear">Clear</div>
+        <div class="oprBox"data-num="back">back</div>
+        <div class="oprBox" data-num="=">=</div>
+
+    <!-- 숫자 및 연산 버튼 -->
+        <div class="btn" data-num="7">7</div>
+        <div class="btn" data-num="8">8</div>
+        <div class="btn" data-num="9">9</div>
+        <div class="btn" id="box1" data-num="+">+</div>
+
+        <div class="btn" data-num="4">4</div>
+        <div class="btn" data-num="5">5</div>
+        <div class="btn" data-num="6">6</div>
+        <div class="btn" id="box1"data-num="-">-</div>
+
+        <div class="btn" data-num="1">1</div>
+        <div class="btn" data-num="2">2</div>
+        <div class="btn" data-num="3">3</div>
+        <div class="btn" id="box1"data-num="*">x</div>
+
+        <div class="btn" data-num="0">0</div>
+        <div class="btn" id="box2"data-num=".">.</div>
+        <div class="btn" id="box1"data-num="/">/</div>
+    </div>
+    </div>
+
+
+
+    <script>
+        const boxs = document.querySelectorAll(".box")
+        const dis = document.querySelector("#dis")
+
+        let expr = '' // 개발자의 계산식 용어
+
+        // boxs.forEach(function(){ }) 이걸 줄였다!
+           boxs.forEach((item)=>{
+            item.addEventListener("click", ()=>{
+                let v = item.dataset.num;
+
+                if(v=== "clear"){
+                    expr = ''
+                    dis.innerHTML = '0'
+                    return;
+
+                }if(v=== "back"){
+                expr = expr.slice(0, -1);
+                dis.innerHTML = expr === '' ? 0 : expr
+                return;
+
+                }if (v === "=") {
+                    if (expr === '' || expr.endsWith("+")) {
+                        dis.innerHTML = 'error'
+                        expr = ''
+
+                     } else if (expr === '' || expr.endsWith("-")) {
+                        dis.innerHTML = 'error'
+                        expr = ''
+                    } else if (expr === '' || expr.endsWith("*")) {
+                        dis.innerHTML = 'error'
+                        expr = ''
+
+                    } else if (expr === '' || expr.endsWith("/")) {
+                        dis.innerHTML = 'error'
+                        expr = ''
+
+                    } else {
+                        let ans = eval(expr)
+                        dis.innerHTML = Number(ans).toLocaleString();
+                        expr = String(ans)
+                    }
+                    return; 
+                }
+        
+                 expr += v
+                 dis.innerHTML = expr;
+     })
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            scroll-behavior: smooth;
+        }
+        
+         @font-face {
+        font-family: 'myfont';
+        src: url('./font/MaruBuri-Regular.ttf');
+    }
+
+        ul{
+            list-style: none;
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            width: 100%;
+            height: 60px;
+            background-color: rgb(38, 39, 39);
+            z-index: 10;
+        }
+
+        a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 90vh;
+            scroll-margin-top: 50px;
+        }
+
+        #box1 { background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%); }
+        #box2 { background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);}
+        #box3 { background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); }
+
+        .whiteBox{
+            width: 60%;
+            height: 400px;
+            background-color: #fff1eb;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.20);
+        }
+
+        .top:hover a {
+            color: rgb(235, 67, 67);
+            transition: 0.3s;
+         }
+
+        .home_title{
+            font-size: 70px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            font-family: 'myfont';
+        }
+
+        .sub_title{
+            font-size: 25px;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+        }
+
+      .back{
+        position: fixed;
+        width: 80px;
+        height: 80px;
+        right: 50px;
+        bottom: 50px;
+        background-color: rgb(0, 0, 0);
+        font-size: 20px;
+        color: rgb(252, 251, 250);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+       }
+
+        .back:hover{
+        background-color: rgb(48, 47, 46);
+        transition: 0.3s;
+         }
+
+         .scroll{
+            list-style: none;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            right: 20px;
+            top: 40%;
+            gap: 30px;
+            width: 60px;
+            height: 170px;
+            z-index: 100;
+         }
+
+         .scroll_ball {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 2px solid #333;
+            border-radius: 50%;
+}
+
+        .scroll_ball:hover{
+        background-color: rgb(26, 26, 26);
+        transition: 0.3s;
+         }
+
+    </style>
+
+</head>
+<body>
+
+    <ul>
+        <li class="top"><a href="#box1">HOME</a></li>
+        <li class="top"><a href="#box2">ABOUT</a></li>
+        <li class="top"><a href="#box3">CONTACT</a></li>
+    </ul>
+
+    <!-- 첫번째 박스 -->
+    <section id="box1">
+        <div class="whiteBox">
+            <span class="home_title">HOME</span>
+            <span class="sub_title">Hope is a waking dream.</span>
+
+        </div>
+    </section>
+
+    <!-- 두번째 박스 -->
+    <section id="box2">
+        <div class="whiteBox">
+            <span class="home_title">ABOUT</span>
+            <span class="sub_title">Hope is only the love of life.</span>
+        </div>
+    </section>
+
+    <!-- 세번째 박스 -->
+    <section id="box3">
+        <div class="whiteBox">
+            <span class="home_title">CONTACT</span>
+            <span class="sub_title">Perpetual optimism is a force multiplier.</span>
+        </div>
+    </section>
+
+          <!-- 옆에 고정된 스크롤바 만들기 -->
+           <div class="scroll">
+            <a href="#box1" class="scroll_ball"></a>
+            <a href="#box2" class="scroll_ball"></a>
+            <a href="#box3" class="scroll_ball"></a>
+           </div>
+
+        <!-- 첫번째 화면으로 돌아가기 -->
+         <div class="back_ball">
+            <ul class="back">
+        <li><a href="#box1">TOP</a></li>
+    </ul>
+
+ </div>
+</body>
+</html>

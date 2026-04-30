@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 점수 통계</title>
+</head>
+<body>
+    <script>
+        let eng = [85, 72, 61, 25, 38, 94, 20];
+        let add = 0; // 합계를 담을 그릇
+        let max = eng[0]; // 일단 첫 번째 점수가 제일 높다고 가정
+        let min = eng[0]; // 일단 첫 번째 점수가 제일 낮다고 가정
+
+        // sum은 무조건 for가 시작되기 전에 선언해라
+        // 그렇지않으면 for문이 0을 반복해서 넣어 초기화 될 것이다 (오류!)
+
+
+        for(let i = 0; i < eng.length; i++){
+            document.write("우리반 영어 점수 ", i + 1, "번 : ", eng[i], "<br/>");
+
+          // eng.length: eng 안의 데이터가 총 몇 개야? 길이가 아니다, 칸 수이다!
+          // length는 사람이 세는 갯수, [i]라는 주소는 컴퓨터가 세는 순서
+          // eng[i]는 eng라는 이름의 점수 리스트에서 i번째 칸에 들어있는 값
+          // 예제 : eng[0] → 85     !! 이걸 인덱싱이라고 한다 !!
+          // i: "지금은 i번 학생 차례야!" (0, 1, 2...)
+          // eng[i]: "그 i번칸 학생의 실제 영어 점수를 가져와!" (85, 72..)
+
+            add = add + eng[i]; 
+            // let sum 값인 0에다가 eng 안에 있는 숫자들을 하나씩 넣을거야
+            // i는 지금 for문 안에서 선언했기에 괄호를 닫으면 소멸한다
+
+            if (eng[i] > max) { 
+                max = eng[i]; 
+            }
+
+            if (eng[i] < min) { 
+                min = eng[i]; 
+            }
+        }
+
+        document.write("영어 점수 합계 : ", add, "점<br/>");
+        document.write("영어 점수 평균 : ", add / eng.length, "점<br/>");
+        document.write("영어 최고 점수 : ", max, "점<br/>");
+        document.write("영어 최저 점수 : ", min, "점<br/>");
+    </script>
+</body>
+</html>

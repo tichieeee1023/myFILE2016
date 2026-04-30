@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨와 우산 소지 여부 확인</title>
+</head>
+<body>
+    <script>
+
+    let rain = prompt("오늘 비가 내리나요? (yes 또는 no)")
+    
+    if(rain === 'yes'){
+        let usan = prompt("우산을 가지고 왔나요? (yes 또는 no)")
+        if(usan === 'yes'){
+            document.write("우산을 가져와서 다행이네요!")
+        }else{
+        document.write("우산이 없으면 젖어요! 조심하세요!")
+        }
+    }
+    </script>
+</body>
+</html>

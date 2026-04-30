@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let login = prompt("로그인 했습니까? (yes 또는 no로 답변)")
+    let admin = prompt("관리자이십니까? (yes 또는 no로 답변)")
+
+    if(login === 'yes'){
+        if(admin === 'yes'){
+            document.write("관리자로 로그인 하셨습니다")
+        }else{
+            document.write("일반인으로 로그인 하셨습니다")
+    }
+}else{
+    // 로그인을 안 했다면 여기로
+    document.write("로그인해주세요")
+}
+    </script>
+</body>
+</html>

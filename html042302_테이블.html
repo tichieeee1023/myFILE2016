@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+        *{margin: 0; padding: 0;}
+
+        table{
+             width: 600px;
+             border-collapse: collapse;
+             margin: 20px auto;
+            
+        }
+
+        tr,td{
+           border: 1px solid rgb(221, 221, 221);
+           padding: 12px;
+           text-align: center;
+        }
+
+        th{
+            padding: 10px;
+            border: 1px solid rgb(221, 221, 221);
+            text-align: center;
+            background-color: rgb(106, 107, 109);
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+        }
+
+        </style>
+
+</head>
+<body>
+    <table>
+
+    <tr class="title">
+        <th>시간</th>
+        <th>월요일</th>
+        <th>화요일</th>
+        <th>수요일</th>
+        <th>목요일</th>
+    </tr>
+
+    <tr>
+         <td class="time">09:00</td>
+         <td>영어</td>
+         <td>수학</td>
+         <td>과학</td>
+         <td>체육</td>
+    </tr>
+
+    <tr>
+    <td class="time">10:00</td>
+    <td>국어</td>
+    <td>영어</td>
+    <td>사회</td>
+    <td>음악</td>
+  </tr>
+
+  <tr>
+    <td class="time">11:00</td>
+    <td colspan="2">프로젝트</td>
+    <!-- 가로로 합친다 -->
+    <td>수학</td>
+    <td>미술</td>
+  </tr>
+
+    <tr>
+    <td class="time">12:00</td>
+    <td rowspan="2">프로</td>
+    <!-- 세로로 합친다 -->
+    <td>역사</td>
+    <td>문학</td>
+    <td>물리</td>
+  </tr>
+
+    <tr>
+    <td class="time">13:00</td>
+    <td>프로</td>
+    <td>문학</td>
+    <td>물리</td>
+  </tr>
+
+
+    </table>
+</body>
+</html>

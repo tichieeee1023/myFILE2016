@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <style>
+        h2{
+            text-align: center;
+            font-size: 45px;
+            color: #081e2c;
+        }
+
+          h3{
+            text-align: center;
+            font-size: 25px;
+            color: #0e251e;
+        }
+
+          h1{
+            text-align: center;
+            font-size: 20px;
+            color: #221e1e;
+            padding: 10px;
+        }
+
+        .outbox{
+            width: 500px;
+            height:100px;
+            font-size: 18px;
+            background-color: rgb(183, 202, 196);
+            border: 1px solid rgb(164, 177, 173);;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 15px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                }
+
+        span{
+           font-size: 20px;
+           color: #395a39;
+           font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+     <h2>프론트엔드 개발 추천서</h2>
+    <h3>☆★어머 이건 꼭 사야해★☆</h3>
+    <h1>25,000원 이상인 책들</h1>
+
+    <select id="sel">
+        <option value=10000>만원 이상</option>
+        <option value=20000>이만원 이상</option>
+        <option value=30000>삼만원 이상</option>
+    </select>
+    <button id="btn">확인</button>
+
+    <!-- select 는 반드시 옵션이랑 같이 나와야 한다! -->
+
+    <div class="outbox"></div>
+
+    <script>
+
+        let outbox = document.querySelector(".outbox")
+        let sel = document.querySelector("#sel")
+        let btn =  document.querySelector("#btn")
+
+        btn.onclick = function(){
+            outbox.innerHTML = ' '
+            book.forEach(function(books) {
+    if (books.price >= Number(sel.value)){
+        outbox.innerHTML += `<div><span>타이틀 :</span> <b>${books.title}</b> ∥ 페이지 : ${books.page}p </div>`;
+  }});
+
+        }
+
+         let book = [
+            {title : "html 기초 습득하기", page : 350, price : 22000},
+            {title : "cdd 기초 습득하기", page : 550, price : 27000},
+            {title : "js 기초 습득하기", page : 650, price : 32000},
+            {title : "jQuery 기초 습득하기", page : 250, price : 19000},
+          ]
+        //   2만 5천원 이상 책이름, 페이지 모두 출력
+
+     
+
+    </script>
+</body>
+</html>

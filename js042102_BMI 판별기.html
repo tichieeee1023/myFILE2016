@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="kg" type="number" placeholder="체중을 입력해주세요" />
+    <input id="cm" type="number" placeholder="키를 입력해주세요">
+    <button id="btn">확인</button>
+    <div id="bmi"> 과체중 판별기 <div>
+
+        <script>
+            let kg = document.getElementById("kg")
+            let cm = document.getElementById("cm")
+            let btn = document.getElementById("btn")
+            let bmi= document.getElementById("bmi")
+
+            btn.onclick = function(){
+            let kg_value = Number(kg.value)
+            let cm_value = Number(cm.value)
+
+            let bmiHap = kg_value/cm_value
+
+            if(bmiHap <= 22.9){
+                    bmi.innerHTML = "당신의 BMI은 정상 체중입니다";
+            }else{
+                    bmi.innerHTML = "당신의 BMI은 과체중입니다";
+
+                }
+            }
+                 
+
+
+        </script>
+    
+</body>
+</html>

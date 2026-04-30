@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>박스 만들기</title>
+    <style>
+        .outBox {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 10px;
+            width: 100px; height: 100px;
+            background-color: #333; color: aliceblue;
+            text-align: center; line-height: 100px;
+            border-radius: 10px; margin: 10px; display: inline-block;
+        }
+        .hello{
+            font-size: 20px;
+            font-weight: bold;
+            color: chocolate;
+        }
+    </style>
+</head>
+<body>
+    <div id="outBox"></div>
+
+    <script>
+       let outBox = document.getElementById("outBox")
+       let name = prompt("이름을 입력해주세요")
+       let num = Number(prompt("반복 횟수는?"))
+       for(let i=1; i<=num; i++){
+        outBox.innerHTML += "<p class='hello'>"+name+"님 환영합니다!"+ "</p>"
+        // += "기존 내용을 가져와서, 새 내용을 더한 다음에, 다시 그 자리에 넣어라"
+       }
+    </script>
+</body>
+</html>

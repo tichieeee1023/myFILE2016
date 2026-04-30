@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let luckNum = 7;
+        let guess;
+        let count = 0;
+          do{
+        guess = Number(prompt("기회는 3번! 오늘의 행운의 숫자는 뭘까요? (1~10)"));
+        count++
+
+       if(guess === luckNum){
+            alert("정답입니다!");
+            break; // [탈출!]
+            // break;를 만나는 순간 컴퓨터는 자신을 감싸고 있는
+            // 가장 가까운 반복문(do~while, for, while)의 중괄호 } 밖으로 순간이동 함
+        }else{
+           alert("다시 입력해주세요")
+        }
+  
+        if(count ===3){
+            alert("기회를 모두 다 쓰셨습니다. 실패!")
+            alert("다음에 다시 도전해보세요")
+        }
+
+
+     } while(count<3)
+
+    
+    </script>
+
+</body>
+</html>

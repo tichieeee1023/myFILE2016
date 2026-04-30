@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// 두 개의 주사위를 던졌을 때, 두 눈의 합이 6이 되는 모든 경우의 수를 출력 
+
+// !! 전제조건 !!
+// 1+5, 2+4 등등...
+// 우선 첫번째 숫자를 고정해서 돌리고, 두번째 숫자를 하나하나 대입한다
+// 그 후 합계가 6이 나오는 걸 찾아야 한다
+
+
+for(let a=1; a<=6; a++){
+    for(let b=1; b<=6; b++){ // 두 번째 주사위를 1~6까지 하나씩 대입
+        if(a+b===6){
+            document.write(`${a}+${b}<br/>`)
+        } 
+    }
+}
+    
+    </script>
+</body>
+</html>

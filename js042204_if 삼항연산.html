@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // // 블록 스코프 : 블록 {} 안에서 선언한 변수는 그 블록 안에서만 사용할 수 있다.
+
+        // // 미리 b를 {} 밖에 선언해놓음으로서 스코프가 닫히더라도 결과값은 나오게 한다
+        // let a = 10
+        // let b
+        
+        // {
+        //     b = 20
+        //     document.write(a, b)
+        // }
+
+        let a = 10
+        let score = 80
+
+        if (a === 10){
+            document.write("같습니다" + "<br/>")     
+        }else{
+            document.write("틀립니다" + "<br/>")     
+        }
+
+        // 자바스크립트 이크마6에서 나온 삼항 연산자 (최신은 9 나인)
+
+        a === 10 ? document.write("같습니다") : document.write("틀립니다" + "<br/>") 
+
+        score >= 80 ? document.write("합격입니다") : document.write("불합격입니다" + "<br/>") 
+
+        // 앞의 내용 조건이 참이면? (더 간략하게)
+        (score >= 80) && document.write("합격입니다")
+
+
+
+
+    </script>
+</body>
+</html>

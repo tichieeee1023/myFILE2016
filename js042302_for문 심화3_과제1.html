@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    let num = Number(prompt("숫자를 입력해주세요"));
+
+    // 일단 i는 몇 층 만들거야?
+    for(let i=1; i<=num; i++){
+
+    // 별을 몇 개 만들까? 
+        for (let j=1; j<=i; j++){
+         document.write("*");
+        }
+    // 밑줄은 첫번째 줄 별이 생성될 때 남은 공간, 입력받은 수 - 층수
+         for (let l=1; l<=(num-i); l++){
+        document.write("_");
+    }
+    document.write("<br>");
+}
+    </script>
+</body>
+</html>

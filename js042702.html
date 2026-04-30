@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2{
+            text-align: center;
+            font-size: 45px;
+            color: #333;
+        }
+
+          h3{
+            text-align: center;
+            font-size: 25px;
+            color: #504e4e;
+        }
+
+        .outbox{
+            width: 500px;
+            background-color: rgb(183, 202, 196);
+            border: 1px solid rgb(164, 177, 173);;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+        .wrap{
+            width: 500px;
+            background-color: rgb(228, 206, 205);
+            border: 1px solid rgb(197, 168, 166);;
+            border-radius: 10px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>출석부</h2>
+    <h3>출석한 사람</h3>
+    <div class="outbox"></div>
+
+    <h3>결석한 사람</h3>
+    <div class="wrap"></div>
+
+    <script>
+
+        let outbox = document.querySelector(".outbox")
+        let wrap = document.querySelector(".wrap")
+        // 아이디를 들고올거면 #, 클래스를 들고올거면 .
+        // querySelector() 함수는 HTML 문서나 특정한 요소 내에서
+        // 지정한 CSS 선택자와 일치하는 첫 번째 요소를 반환
+
+
+        let students = [
+            {name : "길동", grade : 1, isworking : true},
+            {name : "순신", grade : 2, isworking : false},
+            {name : "복자", grade : 2, isworking : true},
+            {name : "철수", grade : 3, isworking : true},
+          
+            ]
+
+        students.forEach(function(check) {
+    if (check.isworking === true) {
+        // 출석한 사람
+        outbox.innerHTML += `<div> 이름 : ${check.name} 학년 : ${check.grade} 출석상태 : ${check.isworking} </div>`;
+    } else {
+        // 결석한 사람
+        wrap.innerHTML += `<div> 이름 : ${check.name} 학년 : ${check.grade} 출석상태 : ${check.isworking} </div>`;
+    }
+});
+
+    </script>
+
+</body>
+</html>

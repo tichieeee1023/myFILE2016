@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 공통변수에 color, tone의 모든 색상조합을 입력하여 출력하세요
+        let color = ["Red", "Blue", "Green"];
+        let tone = ["Light", "Dark"];
+
+        let allcolor = []
+
+         for (let i = 0; i < color.length; i++) {
+         for (let j = 0; j < tone.length; j++) {
+            allcolor.push(color[i] + tone[j] + "<br>") ;
+        }        
+        }
+
+        document.write(allcolor.join(" "))
+        // .join()은 '배열 전용 메서드'
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 목록 조회</title>
+    <style>
+        h2 {
+            text-align: center;
+            color: rgb(48, 38, 42);
+            font-size: 25px;
+            margin: 20px auto 5px;
+        }
+
+        .line {
+            width: 150px;
+            height: 3px;
+            background-color: rgb(223, 96, 96);
+            margin: 0 auto 20px;    
+        }
+
+        .container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .displayBox {
+            width: 400px;
+            border: 1px solid rgb(233, 208, 208);
+            background-color: rgb(199, 132, 132);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 0 auto;
+            color: white;
+            line-height: 1.6;
+        }
+
+        #price {
+            border: 1px solid #ccc;
+            background-color: rgb(236, 221, 224);
+            width: 200px;
+            height: 35px;
+            border-radius: 5px;
+        }
+
+        #btn {
+            padding: 8px 20px;
+            background-color: rgb(100, 100, 100);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #btn:hover {
+            background-color: rgb(60, 60, 60);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>상품목록</h2>
+    <div class="line"></div>
+
+    <div class="container">
+        <select id="price">
+            <option value="1000"> 1000원 이상 </option>
+            <option value="2000"> 2000원 이상 </option>
+            <option value="3000"> 3000원 이상 </option>
+        </select>
+        <button id="btn"> 확인 </button>
+    </div>
+
+    <div class="displayBox">조회 버튼을 눌러주세요.</div>
+
+    <script>
+        let sang = [
+            {name : "사과", price : "2000"},
+            {name : "복숭아", price : "1000"},
+            {name : "딸기", price : "500"},
+            {name : "파인애플", price : "3000"},
+        ];
+
+        let displayBox = document.querySelector(".displayBox");
+        let btn = document.querySelector("#btn");
+        let priceSelect = document.querySelector("#price");
+
+        btn.onclick = function() {
+            displayBox.innerHTML = ""; // 기존 내용 초기화
+            let selectedPrice = Number(priceSelect.value);
+            let found = false; // 검색 결과 확인용
+            let count = 1; // 순번을 위한 변수 생성
+
+            sang.forEach(function(item) {
+                if (Number(item.price) >= selectedPrice) {
+                    // count 변수를 사용하고 1씩 증가시킵니다.
+                    displayBox.innerHTML += `${count}번 ${item.name} 〓 ${item.price}원 <br/>`;
+                    count++;
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                displayBox.innerHTML = "해당 가격 이상의 상품이 없습니다.";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box{
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        .box .img{
+            width: 400px;
+            object-fit:cover;
+            transition: all 0.3s;
+        }
+        
+        .box .img:hover{
+            transform: scale(1.2);
+        }
+
+        .boximg{
+            width: 300px;
+            height: 300px;
+            background-image: url('https://fastly.picsum.photos/id/37/2000/1333.jpg?hmac=vpYLNsQZwU2szsZc4Uo17cW786vR0GEUVq4icaKopQI');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        
+        
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+      <img class="img" src="https://fastly.picsum.photos/id/791/200/200.jpg?hmac=bPVayqOX5aUzsnsX99AgWaxWB3WzWqwaiSDJ-lNHUk4" alt="사진" />
+    </div>
+
+    <div class="boximg"></div>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // slice (잘라내기)
+        let hel = "hello"
+        document.write(hel.slice(0,2) + "<br/>");
+        document.write(hel.slice(0, -1) + "<br/>");
+
+        // split (나누기)
+        let sam = "11+22"
+        let divi = sam.split("+")
+        // divi = [11, 22]
+        document.write(divi + "<br/>")
+        // let kk = img.split(".jpg") ===> kk :: img1
+
+        // toLocalestring : 숫자를 다루는 함수, ' , 콤마 '를 넣어줌
+
+        let num = 123456789
+        let num2 = "12345678"  // << 반드시 숫자화 시켜야함
+        document.write(num.toLocaleString() + "<br/>")
+        document.write(Number(num2.toLocaleString()) + "<br/>")
+
+        let num3 = "11+22+33"
+        sum = eval (num3)
+        document.write (num3)
+        
+    </script>
+</body>
+</html>

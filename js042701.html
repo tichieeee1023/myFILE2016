@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let scores = [
+            {name: "홍길동", kor: "90", eng: 50},
+            {name: "이순신", kor: "100", eng: 30},
+            {name: "강복자", kor: "40", eng: 55},
+           
+
+            // 배열 안에 있는 모든 키 값은 통일되어야 한다!
+            ]
+
+            // for(let i=0; i<scores.length; i++ ){
+            //     document.write (`이름 : ${scores[i].name}, 국어 : ${scores[i].kor}, 영어 : ${scores[i].eng} <br>`)
+            // }
+
+            // forEach 포이치
+            // 배열 안에 객체가 존재하는 형태여야만 사용 사능
+
+            scores.forEach(function(jumsu){
+                document.write(`이름 : ${jumsu.name} 국어 : ${jumsu.kor} 영어 : ${jumsu.eng} <br/>`)
+
+            });
+      
+    </script>
+</body>
+</html>
